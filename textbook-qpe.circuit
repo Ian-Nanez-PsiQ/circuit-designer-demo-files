@@ -1,0 +1,101 @@
+{
+  "record_type": "psiquantum.circuit",
+  "title": "double-phase-kickback-qubitization",
+  "copyright": "Copyright © 2025 PsiQuantum. All rights reserved.",
+  "operations": [
+    {
+      "type": "register",
+      "id": "r1",
+      "label": "\\text{time-frequency}",
+      "size": 5
+    },
+    {
+      "type": "register",
+      "label": "\\text{signal}",
+      "id": "r3"
+    },
+    {
+      "name": "routine",
+      "input_registers": "r1",
+      "type": "routine",
+      "id": "routine1",
+      "label": "\\text{window}",
+      "tags": ""
+    },
+    {
+      "input_registers": "*",
+      "type": "column",
+      "id": "column1",
+      "expanded": false
+    },
+    {
+      "name": "routine",
+      "label": "U",
+      "input_registers": "r3",
+      "type": "routine",
+      "id": "routine3",
+      "controlled_by": "r1[0]"
+    },
+    {
+      "name": "routine",
+      "label": "U^2",
+      "input_registers": "r3",
+      "type": "routine",
+      "id": "routine4",
+      "controlled_by": "r1[1]"
+    },
+    {
+      "name": "routine",
+      "label": "U^4",
+      "input_registers": "r3",
+      "type": "routine",
+      "id": "routine6",
+      "controlled_by": "r1[2]"
+    },
+    {
+      "name": "routine",
+      "label": "U^8",
+      "input_registers": "r3",
+      "type": "routine",
+      "id": "routine8",
+      "controlled_by": "r1[3]"
+    },
+    {
+      "input_registers": "*",
+      "tags": "ellipsis",
+      "type": "separator",
+      "id": "separator1"
+    },
+    {
+      "name": "routine",
+      "label": "U^{2^{\\lceil\\log_2(N)\\rceil}}",
+      "input_registers": "r3",
+      "type": "routine",
+      "id": "routine10",
+      "controlled_by": "r1[4]"
+    },
+    {
+      "name": "routine",
+      "input_registers": "r1",
+      "type": "routine",
+      "id": "routine2",
+      "label": "\\text{QFT}^{-1}",
+      "tags": ""
+    }
+  ],
+  "record_format": 2,
+  "modified": "2025-12-09T21:50:03.451Z",
+  "style": {
+    "title_el": {
+      "visible": false
+    },
+    "copyright_el": {
+      "visible": false
+    },
+    "container_el": {
+      "stroke": {
+        "border_style": "none"
+      }
+    }
+  }
+}
